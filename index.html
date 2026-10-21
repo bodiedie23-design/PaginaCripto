@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mi página personal | Criptografía</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Secciones">
+    <a href="#formacion">Formación académica</a>
+    <a href="#hobbies">Hobbies</a>
+    <a href="#criptografia">Acerca de criptografía</a>
+    <a href="#documentos">CV y llave pública</a>
+  </nav>
+
+  <header class="hero">
+    <img class="foto" src="img/foto.jpeg" alt="Fotografía de perfil">
+    <div>
+      <h1 id="nombre">Diego López Cano</h1>
+      <p class="lema">Estudiante interesado en ciberseguridad, criptografía y machine learning.</p>
+      <div class="datos">
+        <span><b>Correo:</b> <a href="mailto:tucorreo@ejemplo.com">bodiedie23@gmail.com</a></span>
+      </div>
+      <div class="redes" aria-label="Redes sociales">
+        <a class="btn" href="https://www.tiktok.com/@diegolopez1274?_r=1&_t=ZS-9AeQE90Rnz2" target="_blank" rel="noopener">TikTok</a>
+        <a class="btn" href="ohttps://www.facebook.com/share/1EJT1WLWtc/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
+        <a class="btn" href="https://www.instagram.com/invites/contact/?utm_content=1be4cc0&psln=18hyspufov0qs" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="formacion">
+    <h2>Formación académica</h2>
+    <ul>
+      <li><b>Ingeniería en sistemas computacionales</b>, ESCOM - IPN, [año de inicio] – actualidad.</li>
+      <li><b>Bachillerato</b> en Cecyt 11 "Wilfrido Massieu", [años].</li>
+      <li><b>Cursos y certificaciones:</b> Programación en python, Introducción a la ciberseguridad .</li>
+    </ul>
+  </section>
+
+  <section id="hobbies">
+    <h2>Hobbies</h2>
+    <p>Lo que hago en mi tiempo libre.</p>
+    <div class="hobbies">
+      <figure>
+        <img src="img/hobby1.jpg" alt="Hobby 1">
+        <figcaption>Hobby 1: Jugar videojuegos en específico mi videojuego favorito Gears of war e-day.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/hobby2.jpeg" alt="Hobby 2">
+        <figcaption>Hobby 2: También me encanta escuchar música, casi de todo un poco pero ahorita tengo pegada la canción de "Más humano -LATIN MAFIA."</figcaption>
+      </figure>
+      <figure>
+        <!-- Puedes cambiar esta imagen por un video: <video src="img/hobby3.mp4" controls></video> -->
+        <img src="img/hobby3.jpg" alt="Hobby 3">
+        <figcaption>Hobby 3: Amo ver series y peliculas pero sin duda mi serie favorita es "How I met your mother."</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="criptografia" class="cripto">
+    <h2>Acerca de criptografía: Alan Turing y Enigma</h2>
+    <p>Alan Turing (Londres, 1912 – Wilmslow, 1954) fue un matemático británico considerado uno de los padres de la computación. Durante la Segunda Guerra Mundial trabajó en Bletchley Park, el centro de criptoanálisis del Reino Unido.</p>
+
+    <h3>La máquina Enigma</h3>
+    <p>Enigma era una máquina electromecánica de cifrado que usaba la Alemania nazi. Combinaba rotores y un tablero de conexiones, de modo que cada letra se sustituía de forma distinta en cada pulsación. El número de configuraciones posibles era enorme, y la clave cambiaba cada día.</p>
+
+    <h3>Su aporte</h3>
+    <p>Los criptoanalistas polacos, encabezados por Marian Rejewski, habían descifrado las primeras versiones de Enigma antes de la guerra. Turing y su equipo desarrollaron la «Bombe», una máquina que probaba configuraciones de forma automática hasta encontrar la clave diaria. Esto permitió leer mensajes de la marina alemana y, según varios historiadores, acortó la guerra.</p>
+
+    <blockquote>Idea clave para criptografía: la seguridad de un sistema no puede depender de que el enemigo ignore cómo funciona. Debe depender solo de la clave.</blockquote>
+    <p><small>Fuentes: Bletchley Park Trust (bletchleypark.org.uk) y Simon Singh, <i>The Code Book</i></small></p>
+  </section>
+
+  <section id="documentos">
+    <h2>CV y llave pública</h2>
+    <div class="enlaces">
+      <a class="btn fill" href="docs/CV.pdf" download>Descargar mi CV (PDF)</a>
+      <a class="btn" href="docs/llave_publica.pem">Mi llave pública</a>
+    </div>
+    <p><small>La llave pública se generará después. Por ahora el enlace solo apunta al archivo futuro.</small></p>
+  </section>
+
+  <footer>© 2026 Diego López Cano. Página web criptografia.</footer>
+</div>
+
+<script>
+// Efecto único: el nombre aparece "descifrándose" al cargar la página.
+(function(){
+  var el=document.getElementById('nombre');
+  if(!el||window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var texto=el.textContent, abc='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#$%&', paso=0, total=24;
+  el.setAttribute('aria-label',texto);
+  var t=setInterval(function(){
+    var fijo=Math.floor(texto.length*paso/total), s='';
+    for(var i=0;i<texto.length;i++){
+      s+= (i<fijo||texto[i]===' ') ? texto[i] : abc[Math.floor(Math.random()*abc.length)];
+    }
+    el.textContent=s;
+    if(++paso>total){clearInterval(t);el.textContent=texto;}
+  },55);
+})();
+</script>
+</body>
+</html>

@@ -28,7 +28,7 @@
       </div>
       <div class="redes" aria-label="Redes sociales">
         <a class="btn" href="https://www.tiktok.com/@diegolopez1274?_r=1&_t=ZS-9AeQE90Rnz2" target="_blank" rel="noopener">TikTok</a>
-        <a class="btn" href="ohttps://www.facebook.com/share/1EJT1WLWtc/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
+        <a class="btn" href="https://www.facebook.com/share/1EJT1WLWtc/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
         <a class="btn" href="https://www.instagram.com/invites/contact/?utm_content=1be4cc0&psln=18hyspufov0qs" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
@@ -88,6 +88,10 @@
   <footer>© 2026 Diego López Cano. Página web criptografia.</footer>
 </div>
 
+<a href="#" class="subir" id="subir" aria-label="Volver arriba">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</a>
+
 <script>
 // Efecto único: el nombre aparece "descifrándose" al cargar la página.
 (function(){
@@ -104,6 +108,12 @@
     if(++paso>total){clearInterval(t);el.textContent=texto;}
   },55);
 })();
+</script>
+<script>
+  var subir = document.getElementById('subir');
+  window.addEventListener('scroll', function () {
+    subir.classList.toggle('visible', window.scrollY > 300);
+  });
 </script>
 </body>
 </html>
